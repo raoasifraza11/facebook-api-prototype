@@ -29,6 +29,7 @@ namespace GUITask02
         {
             InitializeComponent();
             GetFriendList();
+            getAbout();
         }
 
 
@@ -50,6 +51,17 @@ namespace GUITask02
                 MyCollection.Add(new Person { Id = item.id, Name = item.name });
             }
             ListB.ItemsSource = MyCollection;
+        }
+
+
+        public void getAbout()
+        {
+            client = new FacebookClient();
+            client.AccessToken = "EAACEdEose0cBANVH1bjGJKlLoRM8bpyRdnlmHg1UZCA044TjKFIT1VrN2x4TpoYBOdMLihwQ7PTjnD0Y92FYWxMms2K6TjrUkip5jZCkQ2A47JZBTMZBUyp86VvyJe5pIEDRwdkqCNeVRvfwpPZC0U2ztvWNXKSnAmYHhONK6cxZAGZBg6tFZCWVczekiuKmBzMZD";
+            dynamic Me = client.Get("me?fields=birthday,email,id,name,picture");
+            user_name.Content = Me.name;
+            user_dob.Content = Me.birthday;
+            user_email.Content = Me.email;
         }
 
     }
