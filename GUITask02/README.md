@@ -4,3 +4,7 @@
 * user_about_me
 * user_birthday
 * user_friends
+
+* manage_pages
+
+API = EAACEdEose0cBAHRwzO9TeJzRmYfYiUN4kRYDeAVJyE0EuMw6d45orv8bBEkcVokCacYagvYHg1MjobXBFYTOhQZAfS8C1qsCaxyQnN8gHqVVM6X0jn1q3C0ZATUSK87J9ucGlJyupuJpBNqW43zBl67BfGJHkq8tKGimlziyr1En3xYsRWZApJZCXoI3ZAscM9dhCHZC37LAZDZD
