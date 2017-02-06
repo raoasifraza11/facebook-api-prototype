@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Facebook;
 
 namespace GUITask02
 {
@@ -24,5 +25,8 @@ namespace GUITask02
         {
             InitializeComponent();
         }
+
+
+        
     }
 }

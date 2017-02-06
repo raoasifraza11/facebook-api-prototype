@@ -80,7 +80,13 @@
                 Grid.ColumnSpan='4'
                 Margin='2'>
       <TabItem Header='Friends'>
-        <Grid Background='#FFE5E5E5' />
+        <Grid>
+          <ListBox Name="ListB"
+                   Background='#FFE5E5E5'
+                   DisplayMemberPath="Name"
+                   FontSize="18"
+                   Foreground="white"></ListBox>
+        </Grid>
       </TabItem>
       <TabItem Header='Pages'>
         <Grid Background='#FFE5E5E5' />
