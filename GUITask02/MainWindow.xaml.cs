@@ -21,12 +21,36 @@ namespace GUITask02
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private static FacebookClient client;
+        private List<Person> MyCollection;
+
         public MainWindow()
         {
             InitializeComponent();
+            GetFriendList();
         }
 
 
-        
+        class Person
+        {
+            public string Id { set; get; }
+            public string Name { set; get; }
+
+        }
+
+        public void GetFriendList()
+        {
+            client = new FacebookClient();
+            MyCollection = new List<Person>();
+            client.AccessToken = "EAACEdEose0cBANVH1bjGJKlLoRM8bpyRdnlmHg1UZCA044TjKFIT1VrN2x4TpoYBOdMLihwQ7PTjnD0Y92FYWxMms2K6TjrUkip5jZCkQ2A47JZBTMZBUyp86VvyJe5pIEDRwdkqCNeVRvfwpPZC0U2ztvWNXKSnAmYHhONK6cxZAGZBg6tFZCWVczekiuKmBzMZD";
+            dynamic Me = client.Get("me/friends");
+            foreach (var item in Me.data)
+            {
+                MyCollection.Add(new Person { Id = item.id, Name = item.name });
+            }
+            ListB.ItemsSource = MyCollection;
+        }
+
     }
 }

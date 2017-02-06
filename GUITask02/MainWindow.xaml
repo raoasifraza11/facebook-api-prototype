@@ -85,7 +85,7 @@
                    Background='#FFE5E5E5'
                    DisplayMemberPath="Name"
                    FontSize="18"
-                   Foreground="white"></ListBox>
+                   Foreground="Black"></ListBox>
         </Grid>
       </TabItem>
       <TabItem Header='Pages'>
