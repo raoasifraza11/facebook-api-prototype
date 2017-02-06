@@ -26,12 +26,15 @@ namespace GUITask02
 
         private static FacebookClient client;
         private List<Person> MyCollection;
+        private List<Pages> MyPages;
+        private string access_token = "EAACEdEose0cBAICtLhyzfdww0gtfKDI1Y7LLFCUs7ZAUZABlVQ9hjEZBe1rs3yhWAhsCGENhQaAlraMdq2uggdwaB0LVZB8ZBRHIAW86mk978qZCUsSlXV02XZBDbZAeJnbLhGV93NvzrlCQS7U96eJKIZBrrDT1bWWvs0ntXRZAhu3ZBVI3srVUQ6E4SENsESrMl0ZD";
 
         public MainWindow()
         {
             InitializeComponent();
             GetFriendList();
             GetUserDetails();
+            GetPages();
         }
 
 
@@ -46,7 +49,7 @@ namespace GUITask02
         {
             client = new FacebookClient();
             MyCollection = new List<Person>();
-            client.AccessToken = "EAACEdEose0cBANVH1bjGJKlLoRM8bpyRdnlmHg1UZCA044TjKFIT1VrN2x4TpoYBOdMLihwQ7PTjnD0Y92FYWxMms2K6TjrUkip5jZCkQ2A47JZBTMZBUyp86VvyJe5pIEDRwdkqCNeVRvfwpPZC0U2ztvWNXKSnAmYHhONK6cxZAGZBg6tFZCWVczekiuKmBzMZD";
+            client.AccessToken = access_token;
             dynamic Me = client.Get("me/friends");
             foreach (var item in Me.data)
             {
@@ -59,7 +62,7 @@ namespace GUITask02
         public void GetUserDetails()
         {
             client = new FacebookClient();
-            client.AccessToken = "EAACEdEose0cBANVH1bjGJKlLoRM8bpyRdnlmHg1UZCA044TjKFIT1VrN2x4TpoYBOdMLihwQ7PTjnD0Y92FYWxMms2K6TjrUkip5jZCkQ2A47JZBTMZBUyp86VvyJe5pIEDRwdkqCNeVRvfwpPZC0U2ztvWNXKSnAmYHhONK6cxZAGZBg6tFZCWVczekiuKmBzMZD";
+            client.AccessToken = access_token;
             dynamic Me = client.Get("me?fields=birthday,email,id,name,picture");
             user_name.Content = Me.name;
             user_dob.Content = Me.birthday;
@@ -94,5 +97,26 @@ namespace GUITask02
             user_image.Source = image;
         }
 
+
+        public void GetPages()
+        {
+            client = new FacebookClient();
+            client.AccessToken = access_token;
+            dynamic Me = client.Get("me/accounts");
+            MyPages = new List<Pages>();
+            foreach (var page in Me.data)
+            {
+                MyPages.Add(new Pages { Id = page.id, Name = page.name });
+            }
+            ListPages.ItemsSource = MyPages;
+
+        }
+
+
+        class Pages
+        {
+            public string Id { set; get; }
+            public string Name { set; get; }
+        }
     }
 }

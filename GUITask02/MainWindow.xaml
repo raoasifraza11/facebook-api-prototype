@@ -90,7 +90,13 @@
         </Grid>
       </TabItem>
       <TabItem Header='Pages'>
-        <Grid Background='#FFE5E5E5' />
+        <Grid>
+          <ListBox Name="ListPages"
+                   Background='#FFE5E5E5'
+                   DisplayMemberPath="Name"
+                   FontSize="18"
+                   Foreground="Black"></ListBox>
+        </Grid>
       </TabItem>
     </TabControl>
 
