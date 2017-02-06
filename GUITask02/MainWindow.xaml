@@ -5,8 +5,87 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUITask02"
         mc:Ignorable="d"
-        Title="FB Prototype v.0.1" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="FB Prototype v.0.1"
+        Height="500"
+        Width="700"
+        WindowState='Normal'
+        ResizeMode='NoResize'
+        WindowStartupLocation='CenterScreen'>
+  <Grid Background='BlueViolet'>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width='6*' />
+      <ColumnDefinition Width='119*' />
+      <ColumnDefinition Width='14*' />
+      <ColumnDefinition Width='134*' />
+      <ColumnDefinition Width='236*' />
+      <ColumnDefinition Width='8*' />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height='7*' />
+      <RowDefinition Height='41*' />
+      <RowDefinition Height='44*' />
+      <RowDefinition Height='32*' />
+      <RowDefinition Height='195*' />
+      <RowDefinition Height='10*' />
+    </Grid.RowDefinitions>
+
+    <Image Grid.Row='1'
+           Grid.Column='1'
+           Grid.RowSpan='3'
+           VerticalAlignment='Stretch'
+           HorizontalAlignment='Stretch'
+           Source='Dummy-Profile-Picture.jpg'></Image>
+    <Label Content='Name:'
+           Grid.Column='3'
+           Grid.Row='1'
+           FontSize='20'
+           Foreground='White'
+           FontWeight='Bold' />
+    <Label Foreground='White'
+           Content='Gender'
+           Grid.Row='2'
+           Grid.Column='3'
+           FontSize='20'
+           FontWeight='Bold' />
+    <Label Foreground='White'
+           Content='Date of Birth:'
+           Grid.Row='3'
+           Grid.Column='3'
+           FontSize='20'
+           FontWeight='Bold' />
+    <Label x:Name='user_name'
+           Content='Jhon Keen'
+           Grid.Column='4'
+           Grid.Row='1'
+           Foreground='BurlyWood'
+           FontSize='20'
+           FontWeight='Bold' />
+    <Label x:Name='user_gender'
+           Content='Male'
+           Grid.Row='2'
+           Grid.Column='4'
+           FontSize='20'
+           Foreground='BurlyWood'
+           FontWeight='Bold' />
+    <Label x:Name='user_dob'
+           Content='01-09-1993'
+           Grid.Row='3'
+           Foreground='BurlyWood'
+           Grid.Column='4'
+           FontSize='20'
+           FontWeight='Bold' />
+    <TabControl x:Name='tabControl'
+                Grid.Column='1'
+                Grid.Row='4'
+                Grid.ColumnSpan='4'
+                Margin='2'>
+      <TabItem Header='Friends'>
+        <Grid Background='#FFE5E5E5' />
+      </TabItem>
+      <TabItem Header='Pages'>
+        <Grid Background='#FFE5E5E5' />
+      </TabItem>
+    </TabControl>
+
+  </Grid>
 </Window>
