@@ -29,7 +29,8 @@
       <RowDefinition Height='10*' />
     </Grid.RowDefinitions>
 
-    <Image Grid.Row='1'
+    <Image x:Name='user_image' 
+      Grid.Row='1'
            Grid.Column='1'
            Grid.RowSpan='3'
            VerticalAlignment='Stretch'
